@@ -1,0 +1,27 @@
+﻿<div>
+    <div data-part="items">
+        <h1>Events</h1>
+        <div data-bind="foreach: items">
+            <div data-part="item">
+                <div class="col-sm-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title"
+                                data-bind="text: id"></h2>
+                            <span data-bind="text: timestamp.toLocaleString()"></span>
+                        </div>
+                        <div class="panel-body">
+                            <div data-bind="foreach: $parent.getKeyValues(payload)">
+                                <h4>
+                                    <span class="label label-info"
+                                          data-bind="text: key"></span>
+                                </h4>
+                                <div data-bind="text: value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

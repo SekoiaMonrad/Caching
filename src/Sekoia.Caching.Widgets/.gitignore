@@ -1,0 +1,11 @@
+**/home/**/*.js
+**/home/**/*.js.map
+**/scaffolds/**/*.js
+**/scaffolds/**/*.js.map
+**/sekoia-composition/**/*.js
+**/sekoia-composition/**/*.js.map
+**/shell/IMenu.js
+**/shell/IMenu.js.map
+**/shell/shell.js
+**/shell/shell.js.map
+log-file.txt

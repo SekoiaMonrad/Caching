@@ -1,0 +1,4 @@
+﻿class Configuration {
+}
+
+export = Configuration; 

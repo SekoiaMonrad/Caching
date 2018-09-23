@@ -1,0 +1,39 @@
+﻿<section>
+    <h2>How to use this application template</h2>
+    <p>This template is intended for creating wigdet micro services.</p>
+    <p>
+        A menu is automatically constructed from all pages located in scaffolds, and the structure should be as follows:
+        <ul>
+            <li>
+                /scaffolds
+                <ul>
+                    <li>
+                        /menu1
+                        <ul>
+                            <li>/menuitem11</li>
+                            <li>/menuitem12</li>
+                        </ul>
+                    </li>
+                    <li>
+                        /menu2
+                        <ul>
+                            <li>/menuitem21</li>
+                            <li>/menuitem22</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </p>
+
+    <p>
+        Meaning that a dropdown menu will be created for each folder under scaffolds
+        and a menu item will be created for each folder within those folders.
+        The viewmodel file is expected to be named after menuitem folder.
+    </p>
+
+    <p>
+        Widgets to be included in the nuget package should be located in the widgets
+        folder which follow <a href="http://durandaljs.com/documentation/Creating-A-Widget.html">Durandal2s default widget structure</a>.
+    </p>
+</section>

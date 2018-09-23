@@ -1,0 +1,4 @@
+﻿class Home {
+}
+
+export = Home;

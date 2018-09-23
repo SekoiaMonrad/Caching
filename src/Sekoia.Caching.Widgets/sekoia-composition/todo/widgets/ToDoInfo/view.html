@@ -1,0 +1,33 @@
+﻿<div>
+    <div data-part="loadingAndContents">
+        <div data-bind="visible: isLoading">
+            <div data-part="loading">Loading...</div>
+        </div>
+        <div data-bind="hidden: isLoading">
+            <div data-bind="with: item">
+                <div data-part="contents">
+                    <p>Override data-part loading to replace loading view.</p>
+                    <p>Override data-part contents to replace contents view.</p>
+                    <p>Override data-part loadingAndContents to replace loading and contents views. When overriding this part, content properties mentioned below are located in 'item' property.</p>
+
+                    <div data-bind="foreach: (function() { var arr = []; $.each($data, function(k, v) { arr.push({ key: k, value: v }); }); return arr; })()">
+                        <div>
+                            Bind to <b data-bind="text: key"></b> to show <b data-bind="text: value"></b>
+                        </div>
+                    </div>
+
+                    <p>The followng should be prefixed with $parent when overriding contents data-part and used like this when overriding loading and loadingAndContents.</p>
+                    <p>
+                        Bind to <b>isLoading</b> to determine loading state.
+                    </p>
+                    <p>
+                        Bind to <b>isUnknown</b> to determine whether ToDo ID is unknown by server (i.e. gave 404).
+                    </p>
+                    <p>
+                        Bind to <b>error</b> to determine whether some error other than 404 occured.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

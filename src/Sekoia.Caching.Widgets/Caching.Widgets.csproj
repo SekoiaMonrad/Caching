@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props" Condition="Exists('..\packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props')" />
+  <Import Project="..\packages\xunit.runner.console.2.3.1\build\xunit.runner.console.props" Condition="Exists('..\packages\xunit.runner.console.2.3.1\build\xunit.runner.console.props')" />
+  <Import Project="..\packages\xunit.core.2.3.1\build\xunit.core.props" Condition="Exists('..\packages\xunit.core.2.3.1\build\xunit.core.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{73D37D05-107D-4291-828B-FC0F92BBBB85}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sekoia.Caching.Widgets</RootNamespace>
+    <AssemblyName>Sekoia.Caching.Widgets</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Use64BitIISExpress />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Sekoia.Caching.Widgets.xml</DocumentationFile>
+    <NoWarn>CS1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Sekoia.Caching.Widgets.xml</DocumentationFile>
+    <NoWarn>CS1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Albedo, Version=2.0.0.0, Culture=neutral, PublicKeyToken=179ef6dd03497bbd, processorArchitecture=MSIL">
+      <HintPath>..\packages\Albedo.2.0.0\lib\net35\Albedo.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CsQuery, Version=1.3.3.249, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsQuery.1.3.4\lib\net40\CsQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.6.4.1\lib\Net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.XmlTransform, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq, Version=4.7.145.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.7.145\lib\net45\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nancy.1.4.3\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Bootstrappers.Autofac, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nancy.Bootstrappers.Autofac.1.4.1\lib\net40\Nancy.Bootstrappers.Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Hosting.Aspnet, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nancy.Hosting.Aspnet.1.4.1\lib\net40\Nancy.Hosting.Aspnet.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Serialization.JsonNet, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nancy.Serialization.JsonNet.1.4.1\lib\net40\Nancy.Serialization.JsonNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Testing, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nancy.Testing.1.4.1\lib\net40\Nancy.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Validation.FluentValidation, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nancy.Validation.FluentValidation.1.4.1\lib\net40\Nancy.Validation.FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=2.14.0.832, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Core.2.14.0\lib\net40-Client\NuGet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture, Version=3.51.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoFixture.3.51.0\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture.AutoMoq, Version=3.51.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoFixture.AutoMoq.3.51.0\lib\net40\Ploeh.AutoFixture.AutoMoq.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture.Idioms, Version=3.51.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoFixture.Idioms.3.51.0\lib\net40\Ploeh.AutoFixture.Idioms.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture.Xunit2, Version=3.51.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoFixture.Xunit2.3.51.0\lib\net45\Ploeh.AutoFixture.Xunit2.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia, Version=6.7.0.378, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.6.7.0.378\lib\net461\Sekoia.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.CodeToggling, Version=2.9.0.145, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.CodeToggling.2.9.0.145\lib\net461\Sekoia.CodeToggling.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.CodeToggling.Api, Version=2.9.0.145, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.CodeToggling.Api.2.9.0.145\lib\net461\Sekoia.CodeToggling.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.CodeToggling.AppSettings, Version=2.9.0.145, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.CodeToggling.AppSettings.2.9.0.145\lib\net461\Sekoia.CodeToggling.AppSettings.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.Logging, Version=4.12.2.350, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.Logging.4.12.2.350\lib\net461\Sekoia.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.Messaging, Version=2.3.1.73, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.Messaging.2.3.1.73\lib\net461\Sekoia.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.Messaging.InMemory, Version=2.3.1.73, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.Messaging.InMemory.2.3.1.73\lib\net461\Sekoia.Messaging.InMemory.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.Nancy, Version=1.6.0.74, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.Nancy.1.6.0.74\lib\net461\Sekoia.Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.Nancy.TestUtilities, Version=1.6.0.74, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.Nancy.TestUtilities.1.6.0.74\lib\net461\Sekoia.Nancy.TestUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.Security, Version=1.5.0.99, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.Security.1.5.0.99\lib\net461\Sekoia.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.Security.Nancy, Version=1.5.0.99, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.Security.Nancy.1.5.0.99\lib\net461\Sekoia.Security.Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.ServiceModel, Version=2.6.1.137, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.ServiceModel.2.6.1.137\lib\net461\Sekoia.ServiceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.ServiceModel.Hosting, Version=2.6.1.137, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.ServiceModel.Hosting.2.6.1.137\lib\net461\Sekoia.ServiceModel.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.ServiceModel.NancyAutofac, Version=2.6.1.137, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.ServiceModel.NancyAutofac.2.6.1.137\lib\net461\Sekoia.ServiceModel.NancyAutofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.Services.TrackTrace.Client, Version=3.2.0.72, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.Services.TrackTrace.Client.3.2.0.72\lib\net461\Sekoia.Services.TrackTrace.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.Services.UiComposition.Compass, Version=3.1.1.393, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.Services.UiComposition.Compass.3.1.1.393\lib\net461\Sekoia.Services.UiComposition.Compass.dll</HintPath>
+    </Reference>
+    <Reference Include="Sekoia.TestUtilities, Version=6.7.0.378, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sekoia.TestUtilities.6.7.0.378\lib\net461\Sekoia.TestUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reactive.Core, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Core.3.1.1\lib\net46\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=3.0.1000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Interfaces.3.1.1\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Linq.3.1.1\lib\net46\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.PlatformServices.3.1.1\lib\net46\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Threading, Version=3.0.1000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Windows.Threading.3.1.1\lib\net45\System.Reactive.Windows.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.assert, Version=2.3.1.3858, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.assert.2.3.1\lib\netstandard1.1\xunit.assert.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.core, Version=2.3.1.3858, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.core.2.3.1\lib\netstandard1.1\xunit.core.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.execution.desktop, Version=2.3.1.3858, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.execution.2.3.1\lib\net452\xunit.execution.desktop.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\sekoia-dialog.css" />
+    <Content Include="Content\tester.css" />
+    <Content Include="home\home.html" />
+    <Content Include="home\ui-comp\configuration\configuration.html" />
+    <Content Include="index.html" />
+    <Content Include="main.js" />
+    <Content Include="scaffolds\Caching\Caching\Caching.html" />
+    <Content Include="scaffolds\Caching\ComplexKey\ComplexKey.html" />
+    <Content Include="scaffolds\Caching\RandomFailureOnRetrieval\RandomFailureOnRetrieval.html" />
+    <Content Include="scaffolds\Caching\RefreshAllElementCache\RefreshAllElementCache.html" />
+    <Content Include="scaffolds\Caching\RefreshAllArrayCache\RefreshAllArrayCache.html" />
+    <Content Include="scaffolds\Caching\TestCacheEntryNotFetchingOnSubscribeIfNotTimedOut\TestCacheEntryNotFetchingOnSubscribeIfNotTimedOut.html" />
+    <Content Include="scaffolds\Caching\TestNoFetchOnRefreshIfNoSubscriber\TestNoFetchOnRefreshIfNoSubscriber.html" />
+    <Content Include="scaffolds\Caching\TestSubUnsubRefreshSub\TestSubUnsubRefreshSub.html" />
+    <Content Include="scaffolds\testing\AuthManager\AuthManager.html" />
+    <Content Include="scaffolds\testing\CommonLoading\CommonLoading.html" />
+    <Content Include="scaffolds\testing\EventList\EventList.html" />
+    <Content Include="scaffolds\testing\RadioButton\RadioButton.html" />
+    <Content Include="scaffolds\testing\TimedEvents\TimedEvents.html" />
+    <Content Include="scaffolds\ToDo\Completed\Completed.html" />
+    <Content Include="scaffolds\ToDo\UncompletedAndCompleted\UncompletedAndCompleted.html" />
+    <Content Include="scaffolds\ToDo\Uncompleted\Uncompleted.html" />
+    <Content Include="Scripts\durandal\plugins\bootstrapModal.js" />
+    <Content Include="Scripts\durandal\plugins\dialog.sekoia.js" />
+    <Content Include="sekoia-composition\common-loading\widgets\loading\view.html" />
+    <Content Include="sekoia-composition\testing\uiComponents\RadioButton\RadioButton.css" />
+    <Content Include="sekoia-composition\testing\uiComponents\RadioButton\RadioButton.html" />
+    <Content Include="sekoia-composition\testing\widgets\AuthManager\view.html" />
+    <Content Include="sekoia-composition\testing\widgets\eventlist\view.html" />
+    <Content Include="sekoia-composition\todo\widgets\CompleteToDoLauncher\view.html" />
+    <Content Include="sekoia-composition\todo\widgets\CreateToDoLauncher\view.html" />
+    <Content Include="sekoia-composition\todo\widgets\CreateUpdateToDoDialog\Dialog.html" />
+    <Content Include="sekoia-composition\todo\widgets\CreateUpdateToDoDialog\view.html" />
+    <Content Include="sekoia-composition\todo\widgets\EditToDoLauncher\view.html" />
+    <Content Include="sekoia-composition\todo\widgets\ListOfCompletedToDos\view.html" />
+    <Content Include="sekoia-composition\todo\widgets\ListOfUncompletedToDos\view.html" />
+    <Content Include="sekoia-composition\todo\widgets\ToDoInfo\view.html" />
+    <Content Include="shell\shell.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="api\AuthEndpoint.cs" />
+    <Compile Include="api\Bootstrapper.cs" />
+    <Compile Include="api\Chaos\ChaosProvider.cs" />
+    <Compile Include="api\Chaos\ChaosProviderAutofacModule.cs" />
+    <Compile Include="api\Chaos\DefaultFailureGenerator.cs" />
+    <Compile Include="api\Chaos\Failure.cs" />
+    <Compile Include="api\Chaos\FailureExtensions.cs" />
+    <Compile Include="api\Chaos\FailureTime.cs" />
+    <Compile Include="api\Chaos\HttpStatusCode500RangeFailureStrategy.cs" />
+    <Compile Include="api\Chaos\IFailureGenerator.cs" />
+    <Compile Include="api\Chaos\IFailureStrategy.cs" />
+    <Compile Include="api\Chaos\NancyContextFailureExtensions.cs" />
+    <Compile Include="api\MenuModule.cs" />
+    <Compile Include="api\ToDo\CompleteToDoEndPoint.cs" />
+    <Compile Include="api\ToDo\CreateToDoEndPoint.cs" />
+    <Compile Include="api\ToDo\DeleteToDoEndPoint.cs" />
+    <Compile Include="api\ToDo\GetToDoesEndPoint.cs" />
+    <Compile Include="api\ToDo\ToDo.cs" />
+    <Compile Include="api\ToDo\ToDoDataStore.cs" />
+    <Compile Include="api\ToDo\ToDoServiceEntryPoint.cs" />
+    <Compile Include="api\ToDo\UpdateToDoEndPoint.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="home\home.ts" />
+    <TypeScriptCompile Include="home\ui-comp\configuration\configuration.ts" />
+    <TypeScriptCompile Include="scaffolds\Caching\Caching\Caching.ts" />
+    <TypeScriptCompile Include="scaffolds\Caching\ComplexKey\ComplexKey.ts" />
+    <TypeScriptCompile Include="scaffolds\Caching\RandomFailureOnRetrieval\RandomFailureOnRetrieval.ts" />
+    <TypeScriptCompile Include="scaffolds\Caching\RefreshAllElementCache\RefreshAllElementCache.ts" />
+    <TypeScriptCompile Include="scaffolds\Caching\RefreshAllArrayCache\RefreshAllArrayCache.ts" />
+    <TypeScriptCompile Include="scaffolds\Caching\TestCacheEntryNotFetchingOnSubscribeIfNotTimedOut\TestCacheEntryNotFetchingOnSubscribeIfNotTimedOut.ts" />
+    <TypeScriptCompile Include="scaffolds\Caching\TestNoFetchOnRefreshIfNoSubscriber\TestNoFetchOnRefreshIfNoSubscriber.ts" />
+    <TypeScriptCompile Include="scaffolds\Caching\TestSubUnsubRefreshSub\TestSubUnsubRefreshSub.ts" />
+    <TypeScriptCompile Include="scaffolds\testing\AuthManager\AuthManager.ts" />
+    <TypeScriptCompile Include="scaffolds\testing\CommonLoading\CommonLoading.ts" />
+    <TypeScriptCompile Include="scaffolds\testing\EventList\EventList.ts" />
+    <TypeScriptCompile Include="scaffolds\testing\RadioButton\RadioButton.ts" />
+    <TypeScriptCompile Include="scaffolds\testing\TimedEvents\TimedEvents.ts" />
+    <TypeScriptCompile Include="scaffolds\ToDo\Completed\Completed.ts" />
+    <TypeScriptCompile Include="scaffolds\ToDo\UncompletedAndCompleted\UncompletedAndCompleted.ts" />
+    <TypeScriptCompile Include="scaffolds\ToDo\Uncompleted\Uncompleted.ts" />
+    <TypeScriptCompile Include="Scripts\typings\durandal\durandal.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\fuse\fuse.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\fuse\fuse.sekoia.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\i18next\i18next.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jqueryui\jqueryui.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout\knockout.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout\tests\jasmine.extensions.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\moment-timezone\moment-timezone.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\moment\moment-node.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\moment\moment.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\q\Q.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\requirejs\require.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx-lite.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.aggregates.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.all.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.async-lite.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.async.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.backpressure-lite.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.backpressure.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.binding-lite.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.binding.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.coincidence-lite.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.coincidence.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.experimental.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.joinpatterns.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.lite.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.testing.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.time-lite.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.time.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\rx\rx.virtualtime.d.ts" />
+    <TypeScriptCompile Include="sekoia-composition\common-loading\PackageInitializer.ts" />
+    <TypeScriptCompile Include="sekoia-composition\common-loading\widgets\loading\viewmodel.ts" />
+    <TypeScriptCompile Include="sekoia-composition\Sekoia.Caching.Widgets\components\CacheBuilder\ArrayCache.ts" />
+    <TypeScriptCompile Include="sekoia-composition\Sekoia.Caching.Widgets\components\CacheBuilder\CacheEntry.ts" />
+    <TypeScriptCompile Include="sekoia-composition\Sekoia.Caching.Widgets\components\CacheBuilder\default.ts" />
+    <TypeScriptCompile Include="sekoia-composition\Sekoia.Caching.Widgets\components\CacheBuilder\Dictionary.ts" />
+    <TypeScriptCompile Include="sekoia-composition\Sekoia.Caching.Widgets\components\CacheBuilder\ElementCache.ts" />
+    <TypeScriptCompile Include="sekoia-composition\Sekoia.Caching.Widgets\components\CacheBuilder\interface.d.ts" />
+    <TypeScriptCompile Include="sekoia-composition\Sekoia.Caching.Widgets\components\CacheBuilder\module.d.ts" />
+    <TypeScriptCompile Include="sekoia-composition\Sekoia.Caching.Widgets\components\CacheBuilder\ObjectNotFoundException.ts" />
+    <TypeScriptCompile Include="sekoia-composition\Sekoia.Caching.Widgets\PackageInitializer.ts" />
+    <TypeScriptCompile Include="sekoia-composition\testing\PackageInitializer.ts" />
+    <TypeScriptCompile Include="sekoia-composition\testing\uiComponents\RadioButton\RadioButton.ts" />
+    <TypeScriptCompile Include="sekoia-composition\testing\widgets\AuthManager\IAuthManagerSettings.ts" />
+    <TypeScriptCompile Include="sekoia-composition\testing\widgets\AuthManager\viewmodel.ts" />
+    <TypeScriptCompile Include="sekoia-composition\testing\widgets\eventlist\viewmodel.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\components\ToDoManager\default.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\components\ToDoManager\interface.d.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\components\ToDoManager\module.d.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\PackageInitializer.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\CompleteToDoLauncher\ICompleteToDoLauncherSettings.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\CompleteToDoLauncher\viewmodel.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\CreateToDoLauncher\ICreateToDoLauncherSettings.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\CreateToDoLauncher\viewmodel.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\CreateUpdateToDoDialog\Dialog.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\CreateUpdateToDoDialog\ICreateUpdateToDoDialogSettings.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\CreateUpdateToDoDialog\viewmodel.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\EditToDoLauncher\IEditToDoLauncherSettings.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\EditToDoLauncher\viewmodel.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\ListOfCompletedToDos\IListOfCompletedToDosSettings.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\ListOfCompletedToDos\viewmodel.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\ListOfUncompletedToDos\IListOfUncompletedToDosSettings.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\ListOfUncompletedToDos\viewmodel.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\ToDoInfo\IToDoInfoSettings.ts" />
+    <TypeScriptCompile Include="sekoia-composition\todo\widgets\ToDoInfo\viewmodel.ts" />
+    <TypeScriptCompile Include="sekoia-composition\typings\Sekoia.CodeToggling.Widgets.d.ts" />
+    <TypeScriptCompile Include="sekoia-composition\typings\Sekoia.Services.Compass.Widgets.d.ts" />
+    <TypeScriptCompile Include="sekoia-composition\typings\Sekoia.Services.UiComposition.Compass.Widgets.d.ts" />
+    <TypeScriptCompile Include="sekoia-composition\typings\Sekoia.Widgets.d.ts" />
+    <TypeScriptCompile Include="shell\IMenu.ts" />
+    <TypeScriptCompile Include="shell\shell.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+    <Content Include="sekoia-composition.config" />
+    <Content Include="sekoia-composition\packages.dev.json" />
+    <Content Include="sekoia-composition\Sekoia.Caching.Widgets\Sekoia.Caching.Widgets.widgets.nuspec" />
+    <Content Include="packages.config" />
+    <Content Include="localizations\dev\translation.json" />
+    <Content Include="localizations\dev\common-loading.json" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="sekoia-composition\Sekoia.Caching.Widgets\services\" />
+    <Folder Include="sekoia-composition\Sekoia.Caching.Widgets\widgets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\xunit.analyzers.0.7.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58086</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58086/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\xunit.core.2.3.1\build\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.3.1\build\xunit.core.props'))" />
+    <Error Condition="!Exists('..\packages\xunit.core.2.3.1\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.3.1\build\xunit.core.targets'))" />
+    <Error Condition="!Exists('..\packages\xunit.runner.console.2.3.1\build\xunit.runner.console.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.runner.console.2.3.1\build\xunit.runner.console.props'))" />
+    <Error Condition="!Exists('..\packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props'))" />
+  </Target>
+  <Import Project="..\packages\xunit.core.2.3.1\build\xunit.core.targets" Condition="Exists('..\packages\xunit.core.2.3.1\build\xunit.core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

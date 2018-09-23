@@ -1,0 +1,28 @@
+﻿<div>
+    <div data-part="loadingAndContents">
+        <div data-bind="visible: isLoading()">
+            <div data-part="loading">Loading...</div>
+        </div>
+        <div data-part="items">
+            <div data-bind="foreach: items, visible: !isLoading()">
+                <div data-bind="widget: { kind: 'todo/ToDoInfo', toDoId: $data }">
+                    <div data-part="loadingAndContents">
+                        <div data-bind="with: item">
+                            <div data-part="item">
+                                <p>Override data-part loading to replace loading view.</p>
+                                <p>Override data-part items to replace entire view.</p>
+                                <p>Override data-part item to replace single item view.</p>
+
+                                <div data-bind="foreach: (function() { var arr = []; $.each($data, function(k, v) { if (k !== 'events' && k !== 'latestEvent') arr.push({ key: k, value: v }); }); return arr; })()">
+                                    <div>
+                                        Bind to <b data-bind="text: key"></b> to show <b data-bind="text: value"></b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

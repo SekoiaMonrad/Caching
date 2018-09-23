@@ -1,0 +1,9 @@
+﻿<section>
+    <div data-bind="widget: { kind: 'testing/AuthManager' }">
+        <authentication-type></authentication-type>
+        <claim type="foo"
+               value="bar" />
+        <claim type="bar"
+               data-bind="attr: { value: someClaimValue }" />
+    </div>
+</section>

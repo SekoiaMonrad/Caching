@@ -1,0 +1,59 @@
+﻿<section>
+    <h1>List of ToDos</h1>
+    <div class="container container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Uncompleted ToDos</h2>
+                <div data-bind="widget: { kind: 'todo/CreateToDoLauncher' }">
+                    <div data-bind="visible: canLaunch"
+                         data-part="contents">
+                        <button class="btn btn-success"
+                                data-bind="click: launch"
+                                type="button">
+                            New ToDo
+                        </button>
+                    </div>
+                </div>
+                <button class="btn btn-success"
+                        data-bind="click: function() { refresh(refresh() + 1) }"
+                        type="button">
+                    Refresh
+                </button>
+                <div data-bind="widget: { kind: 'todo/ListOfUncompletedToDos', refresh: refresh }">
+                    <div data-part="item">
+                        <div data-bind="widget: { kind: 'todo/EditToDoLauncher', toDoId: id }">
+                            <div data-part="contents">
+                                <div data-bind="widget: { kind: 'todo/CompleteToDoLauncher', toDoId: $parent.id }">
+                                    <div data-part="contents">
+                                        <span aria-hidden="true" 
+                                              class="glyphicon glyphicon-ok" 
+                                              data-bind="click: launch"
+                                              style="cursor: pointer;"></span>
+                                        <span data-bind="text: $parents[1].title, click: $parent.launch"
+                                              style="cursor: pointer;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2>Completed ToDos</h2>
+                <div data-bind="widget: { kind: 'todo/ListOfCompletedToDos', refresh: refresh }">
+                    <div data-part="item">
+                        <div>
+                            <span data-bind="text: title"></span>
+                            <span aria-hidden="true"
+                                  class="glyphicon glyphicon-ok"
+                                  data-bind="visible: isCompleted"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-bind="widget: { kind: 'todo/CreateUpdateToDoDialog' }"></div>
+
+</section>

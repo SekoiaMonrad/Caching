@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<package>
+  <metadata>
+    <id>Sekoia.Caching.Widgets</id>
+    <version>$version$</version>
+    <title>Sekoia.Caching</title>
+    <authors>Sekoia</authors>
+    <owners>Sekoia</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Cache component.</description>
+    <copyright>Copyright 2015</copyright>
+    <tags>sekoia-composition</tags>
+  </metadata>
+  <files>
+    <file src="PackageInitializer.*"
+          target="content\" />
+    <file src="**\*.*"
+          target="content\" />
+  </files>
+</package>

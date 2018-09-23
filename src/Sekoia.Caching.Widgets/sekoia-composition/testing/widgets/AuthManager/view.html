@@ -1,0 +1,23 @@
+﻿<div>
+
+    <div>
+        <input data-bind="checked: isAuthenticated"
+               type="checkbox" /> <span data-bind="visible: !isAuthenticated()"> is authenticated</span> <span data-bind="visible: isAuthenticated">Authentication-Type: <input data-bind="value: authenticationType, valueUpdate: 'keyup'" /></span>
+    </div>
+    <div>
+        Claims:
+        <!-- ko foreach: claims-->
+        <div>
+            <input data-bind="checked: isEnabled"
+                   type="checkbox" /> <a data-bind="click: function() { $parent.removeClaim($data); return false; }"
+               href="#">x</a> <input data-bind="value: type, valueUpdate: 'keyup'" />: <input data-bind="value: value, valueUpdate: 'keyup'" />
+        </div>
+        <!-- /ko -->
+        <input data-bind="value: newClaimType, valueUpdate: 'keyup'" />: <input data-bind="value: newClaimValue, valueUpdate: 'keyup', event: { keypress: addNewClaimIfEnter }" /> <a data-bind="click: function() { addNewClaim(); return false; }"
+                                                                                                                                                                                      href="#">+</a>
+    </div>
+    <div>
+        Principal generated in backend:
+        <pre data-bind="text: echoPrincipal"></pre>
+    </div>
+</div>

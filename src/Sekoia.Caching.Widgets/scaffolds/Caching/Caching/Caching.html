@@ -1,0 +1,26 @@
+﻿<section>
+    <button data-bind="click: pushNextValue">Push next value</button>
+    <button data-bind="click: refresh">Refresh</button>
+    <div class="container container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <button data-bind="click: subscribe1">Subscribe</button>
+                <button data-bind="click: unsubscribe1">Unsubscribe</button>
+                <ul data-bind="foreach: values1">
+                    <li data-bind="foreach: $data">
+                        <span data-bind="text: $root.getById($data), click: function() { $root.refreshValue($data) }"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <button data-bind="click: subscribe2">Subscribe</button>
+                <button data-bind="click: unsubscribe2">Unsubscribe</button>
+                <ul data-bind="foreach: values2">
+                    <li data-bind="foreach: $data">
+                        <span data-bind="text: $root.getById($data), click: function() { $root.refreshValue($data) }"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

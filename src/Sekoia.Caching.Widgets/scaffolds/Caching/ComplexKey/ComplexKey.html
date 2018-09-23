@@ -1,0 +1,39 @@
+﻿<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Available people</h1>
+                <ul data-bind="foreach: people">
+                    <li>
+                        <span data-bind="text: id"></span>
+                        <input data-bind="value: name, valueUpdate: 'keypress'" />
+                        <input data-bind="value: age, valueUpdate: 'keypress'" />
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    Name search: <input data-bind="value: nameQuery, valueUpdate: 'keypress'" />
+                </div>
+                <div>
+                    Max age: <input data-bind="value: ageQuery, valueUpdate: 'keypress'" />
+                </div>
+                <div>
+                    <button data-bind="click: refreshQuery">Refresh query</button>
+                </div>
+                <h1>Search result</h1>
+                <!-- ko with: ko.pureComputed(function() { return { results: searchResult() } } ) -->
+                <ul data-bind="foreach: results">
+                    <li>
+                        <span data-bind="text: id"></span>
+                        <span data-bind="text: name"></span>
+                        <span data-bind="text: age"></span>
+                        <button data-bind="click: function() { $root.refreshElement(id); } ">Refresh</button>
+                    </li>
+                </ul>
+                <!-- /ko -->
+            </div>
+        </div>
+
+    </div>
+</section>

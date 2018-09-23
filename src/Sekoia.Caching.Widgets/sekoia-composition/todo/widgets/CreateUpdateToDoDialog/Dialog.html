@@ -1,0 +1,45 @@
+﻿<div>
+    <div data-part="contents">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-label="Close"
+                        class="close"
+                        data-bind="click: cancel"
+                        data-dismiss="modal"
+                        type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <h4 class="modal-title"
+                    data-bind="visible: !isEditDialog()">
+                    Create ToDo
+                </h4>
+                <h4 class="modal-title"
+                    data-bind="visible: isEditDialog()">
+                    Edit ToDo
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    Title: <input data-bind="value: title.value, valueUpdate: 'afterkeydown', style: { 'background-color': title.showAsValid() ? '' : 'red' }"
+                                  type="text" /> <span data-bind="text: title.error(), visible: !title.showAsValid()"></span><span data-bind="visible: title.isValidating()">Validating...</span>
+                </div>
+                <div data-bind="visible: error()">
+                    An error occured creating ToDo: <span data-bind="text: error()"></span>. Please try again.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default"
+                        data-bind="click: cancel"
+                        type="button">
+                    Bind click to close
+                </button>
+                <button class="btn btn-success"
+                        data-bind="enable: parameters.allAreValid(), click: save"
+                        type="button">
+                    Bind click to save, valid to parameters.allAreValid
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
